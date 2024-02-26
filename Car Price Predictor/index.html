@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Price Predictor</title>
+</head>
+<body>
+    <h1>Car Price Predictor</h1>
+    <form action="/predict" method="post">
+        <label for="company">Select the company:</label>
+        <select id="company" name="company">
+            <option value="">Select a value</option>
+            {% for company in companies %}
+                <option value="{{ company }}">{{ company }}</option>	
+            {% endfor %}
+        </select>
+        <br><br>
+        <label for="model">Select the model:</label>
+        <select id="model" name="model">
+            <option value="">Select a value</option>
+            {% for model in models %}
+                <option value="{{ model }}">{{ model }}</option>
+            {% endfor %}
+        </select>
+        <br><br>
+        <label for="year">Select the year of purchase:</label>
+        <select id="year" name="year">
+            <option value="">Select a value</option>
+            {% for year in years %}
+                <option value="{{ year }}">{{ year }}</option>
+            {% endfor %}
+        </select>
+        <br><br>
+        <label for="fuel_type">Select fuel type:</label>
+        <select id="fuel_type" name="fuel_type">
+            <option value="">Select a value</option>
+            {% for fuel_type in fuel_types %}
+                <option value="{{ fuel_type }}">{{ fuel_type }}</option>
+            {% endfor %}
+        </select>
+        <br><br>
+        <label for="kms_driven">Enter kilometers traveled:</label>
+        <input type="text" id="kms_driven" name="kms_driven">
+        <br><br>
+        <button type="submit">Predict Price</button>
+    </form>
+</body>
+</html>
